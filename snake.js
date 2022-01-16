@@ -1,7 +1,11 @@
-window.onload = function(){
 
+window.onload = function(){
+    document.getElementById("source").style.display = "none";
+    document.getElementById("source2").style.display = "none";
     var stage = document.getElementById('stage');
     var ctx = stage.getContext("2d");
+    const image = document.getElementById('source');
+    const imageTwo = document.getElementById('source2');
     document.addEventListener("keydown", keyPush);
     setInterval(game, 1000/15);
 
@@ -38,11 +42,11 @@ window.onload = function(){
         ctx.fillStyle="black";
         ctx.fillRect(0, 0, stage.width, stage.height);
         ctx.fillStyle = "red";
-        ctx.fillRect(ax*lp, ay*lp, lp, lp);
+        ctx.drawImage(imageTwo,ax*lp, ay*lp, lp, lp);
 
         ctx.fillStyle = "gray";
         for (var i = 0; i < trail.length; i++) {
-        ctx.fillRect(trail[i].x*lp, trail[i].y*lp, lp-1,lp-1);
+        ctx.drawImage(image,trail[i].x*lp, trail[i].y*lp, lp-1,lp-1);
         if (trail[i].x == px && trail[i].y == py){
             vx = vy = 0;
             tail =5;
