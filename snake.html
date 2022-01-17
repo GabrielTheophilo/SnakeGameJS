@@ -2,10 +2,19 @@
 <html>
 <head>
     <title>Snake Game</title>
+    <style>
+        body {
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+        }
+      </style>
 </head>
     <body>
+        <div>
+            <canvas id="stage" width="2500" height="2500" style="overflow:hidden;"></canvas>
+        </div>
         
-        <canvas id="stage" width="1900" height="940"></canvas>
         <script type="text/javascript" src="snake.js"></script>
         <img id="source" src="assets/snake.png">
         <img id="source2" src="assets/food.png">

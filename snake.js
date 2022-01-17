@@ -8,7 +8,7 @@ window.onload = function(){
     const imageTwo = document.getElementById('source2');
     document.addEventListener("keydown", keyPush);
     setInterval(game, 1000/15);
-
+    
     const vel = 1;
     var gamestarted = false;
     var vx = vy = 0;
