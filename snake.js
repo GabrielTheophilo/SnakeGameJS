@@ -9,6 +9,7 @@ window.onload = function(){
     document.addEventListener("keydown", keyPush);
     setInterval(game, 1000/15);
     
+    var count = 0;
     const vel = 1;
     var gamestarted = false;
     var vx = vy = 0;
@@ -17,7 +18,9 @@ window.onload = function(){
     var qp = 95;
     var gp = 47;
     var ax=Math.floor(Math.random()*qp)
+    var aax=Math.floor(Math.random()*qp)
     var ay=Math.floor(Math.random()*gp);
+    var aay=Math.floor(Math.random()*gp);
     var pontos = 0;
     var vidas = 5;
     var trail = [];
@@ -43,6 +46,12 @@ window.onload = function(){
         ctx.fillRect(0, 0, stage.width, stage.height);
         ctx.fillStyle = "red";
         ctx.drawImage(imageTwo,ax*lp, ay*lp, lp, lp);
+        
+        if (count>400){
+            ctx.drawImage(image,aax*lp, aay*lp, lp, lp);
+        }
+        
+        
 
         ctx.fillStyle = "gray";
         for (var i = 0; i < trail.length; i++) {
@@ -73,12 +82,22 @@ window.onload = function(){
             ax = Math.floor(Math.random()*qp);
             ay = Math.floor(Math.random()*gp);
         }
+        if(aax==px && aay==py && count>400){
+            tail++;
+            pontos+=2;
+            aax = Math.floor(Math.random()*qp);
+            aay = Math.floor(Math.random()*gp);
+        }
 
         ctx.font = "30px Arial";
         ctx.fillText("Pontos:", 0, 25);
         ctx.fillText(pontos, 120, 28);
         ctx.fillText("Vida:", 0, 50);
         ctx.fillText(vidas, 120, 58);
+        count++;
+        ctx.fillText("Contador:", 0, 70);
+        ctx.fillText(count, 120, 78);
+
     } 
     function keyPush(event){
         switch (event.keyCode){
