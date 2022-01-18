@@ -95,8 +95,6 @@ window.onload = function(){
         ctx.fillText("Vida:", 0, 50);
         ctx.fillText(vidas, 120, 58);
         count++;
-        ctx.fillText("Contador:", 0, 70);
-        ctx.fillText(count, 120, 78);
 
     } 
     function keyPush(event){
