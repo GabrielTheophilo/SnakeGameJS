@@ -1,5 +1,5 @@
-
 window.onload = function(){
+    
     document.getElementById("source").style.display = "none";
     document.getElementById("source2").style.display = "none";
     var stage = document.getElementById('stage');
@@ -58,7 +58,6 @@ window.onload = function(){
         ctx.drawImage(image,trail[i].x*lp, trail[i].y*lp, lp-1,lp-1);
         if (trail[i].x == px && trail[i].y == py){
             vx = vy = 0;
-            tail =5;
             if(vidas>0&&gamestarted==true){
                 var randX = Math.floor(Math.random()*qp);
                 var randY=  Math.floor(Math.random()*gp);
@@ -66,6 +65,15 @@ window.onload = function(){
                 py = randY;
                 gamestarted = false;
                 vidas--;
+            }
+            else if((vidas==1||vidas==0)&&gamestarted==true){
+                tail =5;
+                pontos = 0;
+                gamestarted = false;
+                var randX = Math.floor(Math.random()*qp);
+                var randY=  Math.floor(Math.random()*gp);
+                px = randX;
+                py = randY;
             }
             
             }
@@ -95,7 +103,6 @@ window.onload = function(){
         ctx.fillText("Vida:", 0, 50);
         ctx.fillText(vidas, 120, 58);
         count++;
-
     } 
     function keyPush(event){
         switch (event.keyCode){
@@ -123,4 +130,17 @@ window.onload = function(){
                 break;
         }
     }
+    const titles = [
+        "S", "Sn", "Sna", "Snak", "Snake","SnakeG","SnakeGa","SnakeGam","SnakeGame", "SnakeGam","SnakeGa","SnakeG", "Snake", "Snak", "Sna", "Sn","S"
+      ]
+    function changeTitles(titles){
+      let ii = 0
+      return (function update() {
+        document.querySelector('title').textContent = titles[(ii++ % titles.length)]
+        setTimeout(update, 400)
+      })()
+    }
+    changeTitles(titles);
 }
+
+
