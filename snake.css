@@ -1,0 +1,7 @@
+img.bg{
+    overflow:hidden;
+}
+@font-face {
+    font-family: "myFont";
+    src: url("assets/PressStart2P-Regular.ttf");
+  }

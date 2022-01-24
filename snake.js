@@ -96,12 +96,12 @@ window.onload = function(){
             aax = Math.floor(Math.random()*qp);
             aay = Math.floor(Math.random()*gp);
         }
-
-        ctx.font = "30px Arial";
-        ctx.fillText("Pontos:", 0, 25);
-        ctx.fillText(pontos, 120, 28);
-        ctx.fillText("Vida:", 0, 50);
-        ctx.fillText(vidas, 120, 58);
+        
+        ctx.font = "30px myFont";
+        ctx.fillText("Pontos:", 0, 40);
+        ctx.fillText(pontos, 250, 40);
+        ctx.fillText("Vida:", 0, 80);
+        ctx.fillText(vidas, 250, 80);
         count++;
     } 
     function keyPush(event){
