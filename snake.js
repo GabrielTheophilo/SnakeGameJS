@@ -58,6 +58,7 @@ window.onload = function(){
         ctx.drawImage(image,trail[i].x*lp, trail[i].y*lp, lp-1,lp-1);
         if (trail[i].x == px && trail[i].y == py){
             vx = vy = 0;
+            
             if(vidas>0&&gamestarted==true){
                 var randX = Math.floor(Math.random()*qp);
                 var randY=  Math.floor(Math.random()*gp);
@@ -67,6 +68,13 @@ window.onload = function(){
                 vidas--;
             }
             else if((vidas==1||vidas==0)&&gamestarted==true){
+               
+                
+                vidas = 5;
+                pontos = 0;
+                
+                alert("Você morreu");
+                   
                 tail =5;
                 pontos = 0;
                 gamestarted = false;
