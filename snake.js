@@ -44,7 +44,7 @@ function gameStart(){
     var gamestarted = false;
     var vx = vy = 0;
     var px = py = 10;
-    var lp = 8;
+    var lp = 20;
     var qp = 96;
     var gp = 48;
     var ax=Math.floor(Math.random()*qp)
@@ -135,11 +135,11 @@ function gameStart(){
             aay = Math.floor(Math.random()*gp);
         }
         
-        ctx.font = "08px myFont";
-        ctx.fillText("Pontos:", 0, 10);
-        ctx.fillText(pontos, 100, 10);
-        ctx.fillText("Vida:", 0, 20);
-        ctx.fillText(vidas, 100, 20);
+        ctx.font = "22px myFont";
+        ctx.fillText("Pontos:", 0, 25);
+        ctx.fillText(pontos, 200, 25);
+        ctx.fillText("Vida:", 0, 55);
+        ctx.fillText(vidas, 200, 55);
         count++;
     } 
     function keyPush(event){

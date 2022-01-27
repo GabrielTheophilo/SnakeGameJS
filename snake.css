@@ -6,6 +6,10 @@ img.bg{
     src: url("assets/PressStart2P-Regular.ttf");
   }
 
+body {
+  background-color:grey;
+}
+
 .button-6 {
   align-items: center;
   background-color: #FFFFFF;
