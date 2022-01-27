@@ -1,5 +1,35 @@
+
 window.onload = function(){
+    function startGame(){
+        gameStart();
+    }
+    var test = document.getElementById('test');
+    const buttonNewGame = document.createElement('button');
+    buttonNewGame.setAttribute('class','button-6')
+    buttonNewGame.textContent = 'New Game';
+    buttonNewGame.style.width = '12%';
+    const imgOne = document.getElementById('source');
+    const imgTwo = document.getElementById('source2');
+    imgOne.style.visibility = 'hidden';
+    imgTwo.style.visibility = 'hidden';
+    test.append(buttonNewGame);
+    buttonNewGame.addEventListener('click',function(){
+        buttonNewGame.parentNode.removeChild(buttonNewGame);
+        startGame();
+    } );
     
+}
+
+function gameStart(){
+    
+    var test = document.getElementById('test');
+    
+    var src = document.createElement('canvas');
+    
+    src.setAttribute('id', 'stage');
+    src.setAttribute('width', '1920px');
+    src.setAttribute('height', '1080px');
+    test.append(src);
     document.getElementById("source").style.display = "none";
     document.getElementById("source2").style.display = "none";
     var stage = document.getElementById('stage');
@@ -14,9 +44,9 @@ window.onload = function(){
     var gamestarted = false;
     var vx = vy = 0;
     var px = py = 10;
-    var lp = 20;
-    var qp = 95;
-    var gp = 47;
+    var lp = 8;
+    var qp = 96;
+    var gp = 48;
     var ax=Math.floor(Math.random()*qp)
     var aax=Math.floor(Math.random()*qp)
     var ay=Math.floor(Math.random()*gp);
@@ -105,11 +135,11 @@ window.onload = function(){
             aay = Math.floor(Math.random()*gp);
         }
         
-        ctx.font = "30px myFont";
-        ctx.fillText("Pontos:", 0, 40);
-        ctx.fillText(pontos, 250, 40);
-        ctx.fillText("Vida:", 0, 80);
-        ctx.fillText(vidas, 250, 80);
+        ctx.font = "08px myFont";
+        ctx.fillText("Pontos:", 0, 10);
+        ctx.fillText(pontos, 100, 10);
+        ctx.fillText("Vida:", 0, 20);
+        ctx.fillText(vidas, 100, 20);
         count++;
     } 
     function keyPush(event){
